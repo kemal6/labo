@@ -15,7 +15,7 @@ return new class extends Migration
             $table->date('dateDebut');
             $table->date('dateFin');
             $table->unsignedBigInteger('departement_id');
-            $table->foreign('departement_id')->references('id')->on('departements');
+            $table->foreign('departement_id')->references('id')->on('departements')->onDelete('cascade');
             $table->timestamps();
         });
     }

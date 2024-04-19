@@ -9,10 +9,10 @@ class These extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titre', 'description', 'dateDebut', 'dateFin', 'membre_id'];
+    protected $fillable = ['titre', 'description','type','url', 'dateDebut', 'dateFin', 'membre_id'];
 
     public function membre()
     {
-        return $this->belongsTo(Membre::class);
+        return $this->belongsTo(Membre::class,'membre_id');
     }
 }

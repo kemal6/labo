@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('nom');
             $table->text('description');
             $table->unsignedBigInteger('laboratoire_id');
-            $table->foreign('laboratoire_id')->references('id')->on('laboratoires');
+            $table->foreign('laboratoire_id')->references('id')->on('laboratoires')->onDelete('cascade');
             $table->timestamps();
         });
     }

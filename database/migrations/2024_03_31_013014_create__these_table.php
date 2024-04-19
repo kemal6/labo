@@ -12,10 +12,12 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->text('description');
+            $table->enum('type', ['master', 'doctorat']);
+            $table->string('url');
             $table->date('dateDebut');
             $table->date('dateFin');
             $table->unsignedBigInteger('membre_id');
-            $table->foreign('membre_id')->references('id')->on('membres');
+            $table->foreign('membre_id')->references('id')->on('membres')->onDelete('cascade');        
             $table->timestamps();
         });
     }

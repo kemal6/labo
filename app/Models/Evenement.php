@@ -13,6 +13,6 @@ class Evenement extends Model
 
     public function laboratoire()
     {
-        return $this->belongsTo(Laboratoire::class);
+        return $this->belongsTo(Laboratoire::class, 'laboratoire_id');
     }
 }

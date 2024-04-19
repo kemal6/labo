@@ -13,6 +13,6 @@ class Publication extends Model
 
     public function membre()
     {
-        return $this->belongsTo(Membre::class);
+        return $this->belongsTo(Membre::class,'membre_id');
     }
 }

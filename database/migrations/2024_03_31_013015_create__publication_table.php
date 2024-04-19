@@ -15,7 +15,7 @@ return new class extends Migration
             $table->date('datePublication');
             $table->string('lien');
             $table->unsignedBigInteger('membre_id');
-            $table->foreign('membre_id')->references('id')->on('membres');
+            $table->foreign('membre_id')->references('id')->on('membres')->onDelete('cascade');
             $table->timestamps();
         });
     }
